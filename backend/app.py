@@ -1,7 +1,7 @@
 
 #--------------Imports----------------
 
-from flask import request, jsonify
+from flask import request, jsonify,send_from_directory
 from config import app, db, bcrypt
 from models import Exercise, User, Nutrition, ExerciseData, Item, StatGraphs
 import datetime
@@ -13,7 +13,19 @@ import io
 import base64
 
 from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity,unset_jwt_cookies, jwt_required, JWTManager
+import os
 
+
+
+frontend_folder = os.path.join(os.getcwd(),"..","frontend")
+dist_folder = os.path.join(frontend_folder,"dist")
+#server statick files from dist
+@app.route("/",defaults={"filename":""})
+@app.route("/<path:filename>")
+def index(filename):
+    if not filename:
+        filename = "index.html"
+    return send_from_directory(dist_folder, filename)
 
 
 #-----------------User specific database requests---------------------

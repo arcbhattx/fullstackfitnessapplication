@@ -29,4 +29,7 @@ app.config["JWT_SECRET_KEY"] = SECTRET_KEY
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=5)
 jwt = JWTManager(app)
 
+
+
+
     
