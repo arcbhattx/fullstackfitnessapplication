@@ -1,0 +1,21 @@
+.graph-container {
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center the items horizontally */
+  gap: 20px; /* Add space between the images */
+  margin-top: 20px; /* Adjust margin top as needed */
+}
+
+.graph-image {
+  width: 400px; /* Set a fixed width for the image */
+  height: auto; /* Maintain aspect ratio */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 5px; /* Rounded corners */
+
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transitions */
+}
+
+.graph-image:hover {
+  transform: scale(1.7); /* Enlarge the image by 10% on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+  filter: brightness(110%); /* Brighten the image on hover */
+}

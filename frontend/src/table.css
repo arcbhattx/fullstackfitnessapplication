@@ -1,0 +1,42 @@
+/* styles.css */
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000; 
+  }
+  
+  table {
+  border-collapse: collapse;
+  width: 80%;
+  text-align: center;
+  margin: 20px 0;
+  background-color: #000;
+  color: #fff;
+  margin-left: auto;
+  margin-right: 50px;
+  }
+  
+  th, td {
+    border: 1px solid #fff;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #333;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #222;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #111;
+  }
+  
+  tr:hover {
+    background-color: #444;
+  }
+  

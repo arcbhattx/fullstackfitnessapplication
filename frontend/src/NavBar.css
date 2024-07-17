@@ -1,0 +1,61 @@
+/* NavBar.css */
+nav {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  color: white; /* Text color for the welcome message */
+  font-size: 15px; /* Font size for the welcome message */
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 120px; /* Adjust height as needed */
+  width: 120px; /* Adjust width as needed */
+  border: 2px solid white; /* Border style */
+  border-radius: 50%; /* Rounded border */
+  border-color: red;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 5px; /* Adjusted margin */
+  padding: 5px 15px; /* Adjusted padding */
+  background-color: black;
+  color: red;  /* Text color changed to red */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav ul li:hover {
+  background-color: #b80f0f;
+}
+
+nav ul li.active {
+  background-color: rgb(88, 76, 76);
+}
+
+.welcome-message {
+  color: red;
+  position: fixed;
+  top: 20px; /* Adjust top position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  padding: 10px 20px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Font size */
+  z-index: 1000; /* Ensure it's above other content */
+}

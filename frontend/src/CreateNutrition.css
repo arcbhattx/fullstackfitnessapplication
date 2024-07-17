@@ -1,0 +1,76 @@
+.create-nutrition-container {
+  color: black; /* Set text color to black */
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.create-nutrition-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make labels bold */
+}
+
+.create-nutrition-input[type="text"],
+.create-nutrition-input[type="number"],
+.create-nutrition-input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-nutrition-button {
+  padding: 10px 20px;
+  background-color: black; /* Set button background color to black */
+  color: white; /* Set text color to white */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold; /* Make button text bold */
+}
+
+.create-nutrition-button:hover {
+  background-color: #333; /* Darken button on hover */
+}
+
+.create-nutrition-container h2 {
+  margin-bottom: 20px;
+  font-weight: bold; /* Make header text bold */
+}
+
+.item-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Added margin top for spacing */
+}
+
+.item-list-table th,
+.item-list-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.item-list-table th {
+  background-color: black; /* Light gray background for header */
+  font-weight: bold;
+}
+
+.item-list-table td {
+  font-size: 14px;
+}
+
+.item-list-table button {
+  padding: 5px 10px;
+  background-color: #333; /* Dark background color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-list-table button:hover {
+  background-color: #555; /* Darken button on hover */
+}

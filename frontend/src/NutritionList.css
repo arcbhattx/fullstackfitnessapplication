@@ -1,0 +1,18 @@
+.nutrition-item {
+  border: 1px solid #000; /* Border color */
+  padding: 15px; /* Space inside the box */
+  margin-bottom: 20px; /* Space between boxes */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
+  background-color: black; /* Background color */
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+.nutrition-item:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  filter: brightness(110%); 
+}
+.makered {
+  color: red
+}

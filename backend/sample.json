@@ -1,0 +1,70 @@
+{
+    "id": 1,
+    "username": "example_user",
+    "user_age": 25,
+    "user_body_weight": 70,
+    "exercises": [
+        {
+            "id": 1,
+            "bench": 100,
+            "squat": 120,
+            "deadlift": 140,
+            "user_id": 1,
+            "repetitions": [
+                {
+                    "id": 1,
+                    "reps": 10,
+                    "sets": 3,
+                    "exercise_id": 1
+                },
+                {
+                    "id": 2,
+                    "reps": 8,
+                    "sets": 3,
+                    "exercise_id": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "bench": 110,
+            "squat": 130,
+            "deadlift": 150,
+            "user_id": 1,
+            "repetitions": [
+                {
+                    "id": 3,
+                    "reps": 10,
+                    "sets": 3,
+                    "exercise_id": 2
+                },
+                {
+                    "id": 4,
+                    "reps": 8,
+                    "sets": 3,
+                    "exercise_id": 2
+                }
+            ]
+        }
+    ],
+    "nutritions": [
+        {
+            "id": 1,
+            "food": "Chicken Breast",
+            "calories": 200,
+            "date": "2024-07-08",
+            "quantity": 2,
+            "calorie_goal": 2000,
+            "user_id": 1
+        },
+        {
+            "id": 2,
+            "food": "Broccoli",
+            "calories": 50,
+            "date": "2024-07-08",
+            "quantity": 1,
+            "calorie_goal": 2000,
+            "user_id": 1
+        }
+    ]
+}

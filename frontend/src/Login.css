@@ -1,0 +1,39 @@
+.login-container {
+    text-align: center;
+  }
+  
+  .red-heading {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .round-logo {
+    border-radius: 50%;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+  }
+  
+  .login-container form {
+    margin-top: 20px;
+  }
+  
+  .login-container input {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-container button {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: red;
+  }
+  
