@@ -426,40 +426,48 @@ def generate_update_exercise_graphs():
             plot_url = base64.b64encode(img.getvalue()).decode()
             plt.close()
 
-            return plot_url
+            return plot_url, img.getvalue()
 
-        plot_url_one_rep_max = create_plot(
+        plot_url_one_rep_max, img_one_rep_max = create_plot(
             'One Rep Maxes for Bench, Squat, and Deadlift',
             '1RM',
             'one_rep_maxes'
         )
 
-        plot_url_relative_strength = create_plot(
+        plot_url_relative_strength, img_relative_strength = create_plot(
             'Relative Strengths for Bench, Squat, and Deadlift',
             'Relative Strength',
             'relative_strengths'
         )
 
+        # Decode base64 images to bytes
+        img_one_rep_max = base64.b64decode(img_one_rep_max)
+        img_relative_strength = base64.b64decode(img_relative_strength)
+
         # Save or update graphs in the database
         existing_graph = StatGraphs.query.filter_by(user_id=current_user_id).first()
         if existing_graph:
-            existing_graph.graph_exercise = plot_url_one_rep_max
-            existing_graph.graph_exercise_strength = plot_url_relative_strength
+            existing_graph.graph_exercise = img_one_rep_max
+            existing_graph.graph_exercise_strength = img_relative_strength
         else:
             new_graph = StatGraphs(
                 user_id=current_user_id,
-                graph_exercise=plot_url_one_rep_max,
-                graph_exercise_strength=plot_url_relative_strength
+                graph_exercise=img_one_rep_max,
+                graph_exercise_strength=img_relative_strength
             )
             db.session.add(new_graph)
         db.session.commit()
 
         # Return the images as JSON response
-        return jsonify({'plot_one_rep_max': plot_url_one_rep_max, 'plot_relative_strength': plot_url_relative_strength})
+        return jsonify({
+            'plot_one_rep_max': plot_url_one_rep_max,
+            'plot_relative_strength': plot_url_relative_strength
+        })
     except Exception as e:
         # Log the error for debugging
         app.logger.error(f"Error generating exercise graphs: {e}")
         return jsonify({'error': 'Failed to generate graphs'}), 500
+
 
 
 

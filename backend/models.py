@@ -1,5 +1,5 @@
 from config import db
-
+from sqlalchemy.dialects.postgresql import BYTEA
 # User database Model
 class User(db.Model):
     __tablename__ = 'Users'
@@ -114,8 +114,8 @@ class Item(db.Model):
 class StatGraphs(db.Model):
     __tablename__ = 'graphs'
     id = db.Column(db.Integer, primary_key=True)
-    graph_exercise = db.Column(db.String(1000), nullable=True)
-    graph_exercise_strength = db.Column(db.String(1000), nullable=True)
+    graph_exercise = db.Column(BYTEA, nullable=True)
+    graph_exercise_strength = db.Column(BYTEA, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
 
     user = db.relationship('User', back_populates='graphs')

@@ -13,7 +13,7 @@ import os
 
 load_dotenv()
 
-SECRET_KEY = "sectretkeyforapp"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 
@@ -22,7 +22,7 @@ from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity,unse
 app = Flask(__name__)
 CORS(app) #disable error
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///gymappdatabase.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False #not track all mods
 
 
