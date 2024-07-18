@@ -13,7 +13,7 @@ import os
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("JWT_SECTRET_KEY")
+SECRET_KEY = "sectretkeyforapp"
 
 
 
