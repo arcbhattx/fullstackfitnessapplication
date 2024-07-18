@@ -17,10 +17,10 @@ import os
 
 
 
-frontend_folder = os.path.join(os.getcwd(),"..","frontend")
-dist_folder = os.path.join(frontend_folder,"dist")
-#server statick files from dist
-@app.route("/",defaults={"filename":""})
+frontend_folder = os.path.join(os.getcwd(), "..", "frontend")
+dist_folder = os.path.join(frontend_folder, "dist")
+
+@app.route("/", defaults={"filename": ""})
 @app.route("/<path:filename>")
 def index(filename):
     if not filename:
@@ -28,6 +28,9 @@ def index(filename):
     return send_from_directory(dist_folder, filename)
 
 
+@app.route("/favicon.ico")
+def favicon():
+    return "", 200
 #-----------------User specific database requests---------------------
 
 
@@ -460,11 +463,11 @@ def generate_update_exercise_graphs():
 
 
 
-
+with app.app_context():
+        db.create_all()
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+    
 
     app.run(debug=True)
 

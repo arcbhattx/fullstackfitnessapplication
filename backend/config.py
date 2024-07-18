@@ -11,7 +11,9 @@ from dotenv import load_dotenv
 import os
 
 
-SECTRET_KEY = os.getenv("JWT_SECTRET_KEY")
+load_dotenv()
+
+SECRET_KEY = os.getenv("JWT_SECTRET_KEY")
 
 
 
@@ -21,15 +23,14 @@ app = Flask(__name__)
 CORS(app) #disable error
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///gymappdatabase.db"
-app.config["SQLALCHEMY_TRACK_MODIFICAIONS"] = False #not track all mods
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False #not track all mods
+
+
 
 db = SQLAlchemy(app) #create a database instance, gives access to database
+
 bcrypt = Bcrypt(app) 
-app.config["JWT_SECRET_KEY"] = SECTRET_KEY
+app.config["JWT_SECRET_KEY"] = SECRET_KEY
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=5)
 jwt = JWTManager(app)
 
-
-
-
-    
