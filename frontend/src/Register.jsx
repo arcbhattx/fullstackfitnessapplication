@@ -22,7 +22,7 @@ function Register() {
       navigate('/login');
     } catch (error) {
       console.error('There was an error registering!', error);
-      alert('This user already exists please try with a different username')
+      alert('There was an error registering!', error)
     }
   };
 
