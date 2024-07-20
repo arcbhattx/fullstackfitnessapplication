@@ -8,7 +8,7 @@ const FetchSavedGraphs = () => {
   useEffect(() => {
     const fetchGraph = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/generate_update_exercise_graphs', {
+        const response = await fetch('/generate_update_exercise_graphs', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

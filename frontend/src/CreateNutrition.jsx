@@ -21,7 +21,7 @@ const CreateNutrition = () => {
     console.log('Form Data:', formData);  // Debugging: log form data
 
     try {
-      const response = await axios.post('http://localhost:5000/create_nutrition', formData, {
+      const response = await axios.post('/create_nutrition', formData, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}` // Include the token in the Authorization header

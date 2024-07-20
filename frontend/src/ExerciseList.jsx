@@ -12,7 +12,7 @@ const ExerciseList = () => {
       const token = localStorage.getItem('token');
 
       try {
-        const response = await axios.get('http://localhost:5000/exercises', {
+        const response = await axios.get('/exercises', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -32,7 +32,7 @@ const ExerciseList = () => {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.delete(`http://localhost:5000/delete_exercise/${userId}`, {
+      await axios.delete(`/delete_exercise/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

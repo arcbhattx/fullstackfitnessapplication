@@ -18,7 +18,7 @@ const NutritionList = () => {
       const token = localStorage.getItem('token'); // Retrieve the token from localStorage
 
       try {
-        const response = await axios.get('http://localhost:5000/nutrition', {
+        const response = await axios.get('/nutrition', {
           headers: {
             Authorization: `Bearer ${token}` // Include the token in the Authorization header
           }
@@ -43,7 +43,7 @@ const NutritionList = () => {
     const token = localStorage.getItem('token'); // Retrieve the token from localStorage
 
     try {
-      await axios.post('http://localhost:5000/create_item', {
+      await axios.post('/create_item', {
         ...itemData,
         nutrition_id: nutritionId
       }, {
@@ -51,7 +51,7 @@ const NutritionList = () => {
           Authorization: `Bearer ${token}`
         }
       });
-      const updatedResponse = await axios.get('http://localhost:5000/nutrition', {
+      const updatedResponse = await axios.get('/nutrition', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -73,7 +73,7 @@ const NutritionList = () => {
     const token = localStorage.getItem('token');
   
     try {
-      const response = await axios.patch(`http://localhost:5000/update_complete/${nutritionId}`, {
+      const response = await axios.patch(`/update_complete/${nutritionId}`, {
         complete: !currentComplete ? "True" : "False"
       }, {
         headers: {
