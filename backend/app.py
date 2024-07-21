@@ -1,7 +1,7 @@
 
 #--------------Imports----------------
 
-from flask import request, jsonify,send_from_directory
+from flask import request, jsonify,send_from_directory,abort
 from config import app, db, bcrypt
 from models import Exercise, User, Nutrition, ExerciseData, Item, StatGraphs
 import datetime
@@ -16,18 +16,27 @@ from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity,unse
 import os
 
 
-
 frontend_folder = os.path.join(os.getcwd(), "..", "frontend")
 dist_folder = os.path.join(frontend_folder, "dist")
 
-@app.route("/", defaults={"filename": ""})
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(os.path.join(dist_folder, "static"), filename)
+
+@app.route("/", defaults={"filename": "index.html"})
 @app.route("/<path:filename>")
-def index(filename):
-    if not filename:
+def serve_file(filename):
+    if filename == "":
         filename = "index.html"
-    return send_from_directory(dist_folder, filename)
+    
+    file_path = os.path.join(dist_folder, filename)
+    if os.path.isfile(file_path):
+        return send_from_directory(dist_folder, filename)
+    else:
+        # Serve index.html for all other routes not matched
+        return send_from_directory(dist_folder, "index.html")
 
-
+    
 @app.route("/favicon.ico")
 def favicon():
     return "", 200
@@ -440,10 +449,6 @@ def generate_update_exercise_graphs():
             'relative_strengths'
         )
 
-        # Decode base64 images to bytes
-        img_one_rep_max = base64.b64decode(img_one_rep_max)
-        img_relative_strength = base64.b64decode(img_relative_strength)
-
         # Save or update graphs in the database
         existing_graph = StatGraphs.query.filter_by(user_id=current_user_id).first()
         if existing_graph:
@@ -471,11 +476,10 @@ def generate_update_exercise_graphs():
 
 
 
+
 with app.app_context():
         db.create_all()
 
 if __name__ == "__main__":
-    
-
-    app.run(debug=True)
+    app.run()
 

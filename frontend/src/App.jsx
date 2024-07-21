@@ -10,21 +10,22 @@ import Homepage from './HomePage';
 
 import Mainpage from './MainPage';
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Add this import
 
 function App() {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <div className="App">
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login/>}/>
             <Route path = "/" element = { <Homepage/>} /> 
             <Route path = "/Home" element = {<Mainpage/>}/>
+            <Route path="*" element={<Homepage />} />
           </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
     </>
   );
 }
