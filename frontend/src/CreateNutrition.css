@@ -1,5 +1,5 @@
 .create-nutrition-container {
-  color: black; /* Set text color to black */
+  color: black; 
   width: 100%;
   margin-top: 20px;
 }
@@ -8,7 +8,7 @@
 .create-nutrition-label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold; /* Make labels bold */
+  font-weight: bold; 
 }
 
 .create-nutrition-input[type="text"],
@@ -23,27 +23,27 @@
 
 .create-nutrition-button {
   padding: 10px 20px;
-  background-color: black; /* Set button background color to black */
-  color: white; /* Set text color to white */
+  background-color: black; 
+  color: white; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold; /* Make button text bold */
+  font-weight: bold; 
 }
 
 .create-nutrition-button:hover {
-  background-color: #333; /* Darken button on hover */
+  background-color: #333; 
 }
 
 .create-nutrition-container h2 {
   margin-bottom: 20px;
-  font-weight: bold; /* Make header text bold */
+  font-weight: bold; 
 }
 
 .item-list-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px; /* Added margin top for spacing */
+  margin-top: 20px; 
 }
 
 .item-list-table th,
@@ -54,7 +54,7 @@
 }
 
 .item-list-table th {
-  background-color: black; /* Light gray background for header */
+  background-color: black;
   font-weight: bold;
 }
 
@@ -64,7 +64,7 @@
 
 .item-list-table button {
   padding: 5px 10px;
-  background-color: #333; /* Dark background color */
+  background-color: #333; 
   color: white;
   border: none;
   border-radius: 4px;
@@ -72,5 +72,5 @@
 }
 
 .item-list-table button:hover {
-  background-color: #555; /* Darken button on hover */
+  background-color: #555; 
 }

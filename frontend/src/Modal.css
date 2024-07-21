@@ -5,22 +5,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center; /* horizontally center content */
-    align-items: center; /* vertically center content */
-    z-index: 1000; /* ensure modal is on top of other content */
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
 }
 
 .modal-content {
-    background-color: #fff; /* white background */
-    color: #fff; /* text color */
+    background-color: #fff;
+    color: #fff;
     padding: 20px;
-    max-width: 80%; /* adjust maximum width as needed */
-    max-height: 80%; /* adjust maximum height as needed */
-    overflow: auto; /* enable scrolling if content exceeds modal dimensions */
+    max-width: 80%; 
+    max-height: 80%;
+    overflow: auto; 
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .close-modal {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './FetchSavedGraphs.css'; // Import CSS file for styling
+import './FetchSavedGraphs.css'; 
 
 const FetchSavedGraphs = () => {
   const [graph, setGraph] = useState(null); 

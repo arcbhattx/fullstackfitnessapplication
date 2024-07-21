@@ -1,6 +1,7 @@
 from config import db
 from sqlalchemy.dialects.postgresql import BYTEA
-# User database Model
+
+
 class User(db.Model):
     __tablename__ = 'Users'
     id = db.Column(db.Integer, primary_key=True)
@@ -17,7 +18,6 @@ class User(db.Model):
         return {
             "id": self.id,
             "username": self.username,
-            # Note: Do not include the password in the JSON representation for security reasons
             "user_age": self.user_age,
             "user_body_weight": self.user_body_weight,
             "exercises": [exercise.to_json() for exercise in self.exercises],
@@ -25,11 +25,10 @@ class User(db.Model):
             "graphs": [graph.to_json() for graph in self.graphs]
         }
 
-# Exercise database Model
 class Exercise(db.Model):
     __tablename__ = 'exerciseset'
     id = db.Column(db.Integer, primary_key=True)
-    exercise_type = db.Column(db.String(50), nullable=False)  # 'bench', 'squat', or 'deadlift'
+    exercise_type = db.Column(db.String(50), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
 
     user = db.relationship('User', back_populates='exercises')
@@ -43,7 +42,6 @@ class Exercise(db.Model):
             "exercise_data": [data.to_json() for data in self.exercise_data]
         }
 
-# Reps for Exercise database model
 class ExerciseData(db.Model):
     __tablename__ = 'exercise_data'
     id = db.Column(db.Integer, primary_key=True)
@@ -69,7 +67,6 @@ class ExerciseData(db.Model):
             "exercise_strength": self.exercise_strength
         }
 
-# Nutrition database Model
 class Nutrition(db.Model):
     __tablename__ = 'nutrition'
     id = db.Column(db.Integer, primary_key=True)
@@ -114,8 +111,8 @@ class Item(db.Model):
 class StatGraphs(db.Model):
     __tablename__ = 'graphs'
     id = db.Column(db.Integer, primary_key=True)
-    graph_exercise = db.Column(BYTEA, nullable=True)
-    graph_exercise_strength = db.Column(BYTEA, nullable=True)
+    graph_exercise = db.Column(db.LargeBinary, nullable=True)
+    graph_exercise_strength = db.Column(db.LargeBinary, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
 
     user = db.relationship('User', back_populates='graphs')

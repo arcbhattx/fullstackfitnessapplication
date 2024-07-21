@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from './images/Scat.png';
-import './Homepage.css'; // Import CSS file for styling
+import './Homepage.css'; 
 
 function Homepage() {
     return (

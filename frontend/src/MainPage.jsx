@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import ExerciseList from './ExerciseList';
 import NutritionList from "./NutritionList";
 import CreateExercise from './CreateExercise';
 import CreateNutrition from "./CreateNutrition";
+
 import Logout from './Logout';
 import Login from './Login';
 import Profile from "./Profile";
+
 import './NavBar.css';
 import './Modal.css';
-import './LogoutButton.css'; // Import the new CSS file
+import './LogoutButton.css'; 
+
 import logo from './images/Scat.png';
+
 import FetchSavedGraphs from "./FetchSavedGraphs";
 
 function MainPage() {

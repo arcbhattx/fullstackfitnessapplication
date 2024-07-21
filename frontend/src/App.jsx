@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react'
 import './App.css'
 
 import Register from './Register';
 import Login from './Login';
-import Profile from './Profile';
 import Homepage from './HomePage';
-
-
-
 import Mainpage from './MainPage';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Add this import
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

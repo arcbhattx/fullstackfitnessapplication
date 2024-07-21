@@ -21,12 +21,12 @@ const CreateExercise = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
 
-    console.log('Form Data:', formData);  // Debugging: log form data
+    console.log('Form Data:', formData); 
 
     try {
       const response = await axios.post('/create_exercise', formData, {
         headers: {
-          Authorization: `Bearer ${token}` // Include the token in the Authorization header
+          Authorization: `Bearer ${token}`
         }
       });
       console.log("Response data:", response.data);
@@ -85,7 +85,7 @@ const CreateExercise = () => {
         <div>
           <label>Date</label>
           <input
-            type="date" // Change input type to date
+            type="date" 
             name="date"
             value={date}
             onChange={handleChange}

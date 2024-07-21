@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './styles.css'; // Make sure to import your CSS file
+import './styles.css';
 
 const ExerciseList = () => {
   const [user, setUser] = useState({});

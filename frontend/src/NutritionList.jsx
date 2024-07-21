@@ -15,16 +15,16 @@ const NutritionList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const token = localStorage.getItem('token'); // Retrieve the token from localStorage
+      const token = localStorage.getItem('token'); 
 
       try {
         const response = await axios.get('/nutrition', {
           headers: {
-            Authorization: `Bearer ${token}` // Include the token in the Authorization header
+            Authorization: `Bearer ${token}` 
           }
         });
-        console.log('Fetched nutrition data:', response.data.nutritions); // Debugging: log fetched data
-        setNutritionData(response.data.nutritions); // Access the nested nutritions array
+        console.log('Fetched nutrition data:', response.data.nutritions);
+        setNutritionData(response.data.nutritions); 
         setLoading(false);
       } catch (error) {
         setError(error.response ? error.response.data : error.message);
@@ -40,8 +40,7 @@ const NutritionList = () => {
   };
 
   const handleAddItem = async (nutritionId) => {
-    const token = localStorage.getItem('token'); // Retrieve the token from localStorage
-
+    const token = localStorage.getItem('token'); 
     try {
       await axios.post('/create_item', {
         ...itemData,
@@ -73,7 +72,7 @@ const NutritionList = () => {
     const token = localStorage.getItem('token');
   
     try {
-      const response = await axios.patch(`/update_complete/${nutritionId}`, {
+      await axios.patch(`/update_complete/${nutritionId}`, {
         complete: !currentComplete ? "True" : "False"
       }, {
         headers: {
@@ -89,6 +88,26 @@ const NutritionList = () => {
   
     } catch (error) {
       console.error("Error occurred:", error.response ? error.response.data : error.message);
+    }
+  };
+
+  const handleDeleteItem = async (itemId) => {
+    const token = localStorage.getItem('token');
+    try {
+      await axios.delete(`/delete_item/${itemId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setNutritionData(prevData =>
+        prevData.map(nutrition => ({
+          ...nutrition,
+          item_data: nutrition.item_data.filter(item => item.id !== itemId)
+        }))
+      );
+    } catch (error) {
+      console.error("Error occurred:", error.response ? error.response.data : error.message);
+      alert('Failed to delete item');
     }
   };
 

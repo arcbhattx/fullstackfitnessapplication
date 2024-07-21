@@ -13,7 +13,7 @@
   }
   
   .small-input {
-    width: calc(100% - 20px); /* Adjust width as needed */
+    width: calc(100% - 20px); 
     padding: 8px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -23,7 +23,7 @@
   
   .small-button {
     display: block;
-    width: calc(100% - 20px); /* Adjust width as needed */
+    width: calc(100% - 20px);
     padding: 10px 20px;
     font-size: 14px;
     background-color: bla;

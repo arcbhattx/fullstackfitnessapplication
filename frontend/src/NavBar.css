@@ -1,25 +1,24 @@
-/* NavBar.css */
 nav {
   padding: 5px;
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content: flex-end; 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  color: white; /* Text color for the welcome message */
-  font-size: 15px; /* Font size for the welcome message */
+  color: white; 
+  font-size: 15px;
 }
 
 .logo {
   position: absolute;
   top: 10px;
   left: 10px;
-  height: 120px; /* Adjust height as needed */
-  width: 120px; /* Adjust width as needed */
-  border: 2px solid white; /* Border style */
-  border-radius: 50%; /* Rounded border */
+  height: 120px;
+  width: 120px;
+  border: 2px solid white;
+  border-radius: 50%;
   border-color: red;
 }
 
@@ -31,10 +30,10 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 5px; /* Adjusted margin */
-  padding: 5px 15px; /* Adjusted padding */
+  margin: 0 5px; 
+  padding: 5px 15px; 
   background-color: black;
-  color: red;  /* Text color changed to red */
+  color: red; 
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -51,11 +50,11 @@ nav ul li.active {
 .welcome-message {
   color: red;
   position: fixed;
-  top: 20px; /* Adjust top position */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  padding: 10px 20px; /* Padding around text */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 18px; /* Font size */
-  z-index: 1000; /* Ensure it's above other content */
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px; 
+  border-radius: 5px;
+  font-size: 18px; 
+  z-index: 1000; 
 }

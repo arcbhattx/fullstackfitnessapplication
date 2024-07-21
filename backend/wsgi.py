@@ -1,3 +1,5 @@
+#For render.com
+
 from app import app
 from config import db
 

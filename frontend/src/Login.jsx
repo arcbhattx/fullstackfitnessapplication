@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logo from './images/Scat.png';
-import './Login.css'; // Import your CSS file
+import './Login.css';
 
 function Login() {
   const navigate = useNavigate();

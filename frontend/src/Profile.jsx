@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Profile.css"; // Import the CSS file
+import "./Profile.css"; 
 
 function Profile() {
   const [age, setAge] = useState(0);
@@ -9,7 +9,7 @@ function Profile() {
   const [newAge, setNewAge] = useState(0);
   const [newBodyWeight, setNewBodyWeight] = useState(0);
   const [newUsername, setNewUsername] = useState('');
-  const [userId, setUserId] = useState(null); // New state for user ID
+  const [userId, setUserId] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [editing, setEditing] = useState(false);
@@ -58,8 +58,7 @@ function Profile() {
       setAge(newAge);
       setBodyWeight(newBodyWeight);
       setEditing(false);
-      
-      // Refresh the page after update
+
       window.location.reload();
     } catch (error) {
       setError(error.message);

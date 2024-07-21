@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './CreateNutrition.css'; // Assuming you have a CSS file for this component
+import './CreateNutrition.css';
 
 const CreateNutrition = () => {
   const [formData, setFormData] = useState({
@@ -16,15 +16,15 @@ const CreateNutrition = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = localStorage.getItem('token'); // Retrieve the token from localStorage
+    const token = localStorage.getItem('token');
 
-    console.log('Form Data:', formData);  // Debugging: log form data
+    console.log('Form Data:', formData); 
 
     try {
       const response = await axios.post('/create_nutrition', formData, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}` // Include the token in the Authorization header
+          Authorization: `Bearer ${token}` 
         }
       });
       console.log("Response data:", response.data);
@@ -32,7 +32,7 @@ const CreateNutrition = () => {
         calorie_goal: 0,
         date: ""
       });
-      window.location.reload(); // Refresh the page after successful submission
+      window.location.reload();
     } catch (error) {
       console.error("Error occurred:", error.response ? error.response.data : error.message);
     }
@@ -56,7 +56,7 @@ const CreateNutrition = () => {
         <div>
           <label className="create-nutrition-label">Date</label>
           <input
-            type="date" // Change input type to date
+            type="date" 
             name="date"
             value={date}
             onChange={handleChange}
